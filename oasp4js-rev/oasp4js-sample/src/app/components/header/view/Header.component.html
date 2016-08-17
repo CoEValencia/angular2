@@ -9,18 +9,23 @@
       <a> Kitchen </a>
     </li>
   </ul>
+
 <div class = "header-right">
+
   <div class="dropdown">
-    <button class="dropdown-toggle userlist" type="button" data-toggle="dropdown">
+
+    <button class="userList" type="button" (click) ="openMenu()" data-toggle="dropdown">
       <img  class ="icon" [src]="currentIcon">
         {{currentLanguage}}
       <span class="caret"></span></button>
 
-    <ul class="dropdown-menu dropdown-menu-right">
+    <ul class="dropdown-menu dropdown-menu-right" [hidden] = "dropmenu" id ="dropMenuId">
       <li (click) ="changeLanguage()"><a> <img  class ="icon" [src]="optionIcon"> {{optionLanguage}}</a></li>
     </ul>
 
   </div>
+
+
   <span *ngIf="logged"> Logged in as : {{username}} </span>
   <button type="button" class = "btn btn-primary" *ngIf="logged" (click) = "logOff()"> Log off </button>
 </div>

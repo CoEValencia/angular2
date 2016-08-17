@@ -32,7 +32,6 @@ import { User } from './models/user/User.model'
   providers: [TableService, PositionService, OfferService,HTTP_PROVIDERS,TableManagementRestService]
 })
 export class Oasp4jsSampleAppComponent{
-  title = 'oasp4js-sample works!';
   public login:boolean
   public usuario: User = new User(0,"","");
 

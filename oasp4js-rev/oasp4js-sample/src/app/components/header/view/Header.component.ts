@@ -12,6 +12,7 @@ import {languages} from '../../../resources/languages/Languages.resource'
 export class HeaderComponent {
     logged: boolean = false;
     username: string;
+    dropmenu:boolean = false;
 
     currentIcon:string = languages[0].iconUrl;
     currentLanguage: string = languages[0].name;
@@ -20,6 +21,11 @@ export class HeaderComponent {
     optionLanguage: string = languages[1].name;
 
     logOffEvent = new EventEmitter<boolean>();
+
+    openMenu(){
+      this.dropmenu = !this.dropmenu;
+      document.getElementById("dropMenuId").hidden = this.dropmenu;
+    }
 
     changeLanguage(){
       let aux = this.currentLanguage;
