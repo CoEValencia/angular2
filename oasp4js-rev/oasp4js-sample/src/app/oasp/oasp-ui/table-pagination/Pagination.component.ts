@@ -3,7 +3,7 @@ import {EventEmitter} from '@angular/core'
 
 @Component({
   selector:'pagination',
-  templateUrl:'app/components/crud/view/Pagination.component.html',
+  templateUrl:'app/oasp/oasp-ui/table-pagination/Pagination.component.html',
   inputs:['list', 'rowsPerPage'],
   outputs: ['listEmitter']
 })

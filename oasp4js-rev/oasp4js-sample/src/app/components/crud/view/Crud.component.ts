@@ -3,7 +3,7 @@ import {CrudService} from '../service/Crud.service'
 import {Table} from '../../../models/table/Table.model'
 import {DetailsComponent} from '../../details/view/Details.component'
 import {Command} from '../../../models/command/Command.model'
-import {PaginationComponent} from './Pagination.component'
+import {PaginationComponent} from '../../../oasp/oasp-ui/table-pagination/Pagination.component'
 
 @Component({
   selector:'crud',
@@ -19,7 +19,6 @@ export class CrudComponent{
   public tablesPerPage: number = 4;
 
   arr:Command[];
-  //public table:Table = new Table(0,'','');
   public selectedTable:Table = new Table(0,'','',this.arr, this.arr);
   public myState;
 
@@ -37,25 +36,21 @@ export class CrudComponent{
   }
 
   reserve(){
-    // this.crudService.reserve(this.table);
     this.crudService.reserve(this.selectedTable);
     this.myState = 3;
   }
 
   cancelReservation(){
-    // this.crudService.cancelReservation(this.table);
     this.crudService.cancelReservation(this.selectedTable);
     this.myState = 1;
   }
 
   occupy(){
-    //this.crudService.occupy(this.table);
     this.crudService.occupy(this.selectedTable);
     this.myState = 2;
   }
 
   free(){
-    //this.crudService.free(this.table);
     this.crudService.free(this.selectedTable);
     this.myState = 1;
   }
